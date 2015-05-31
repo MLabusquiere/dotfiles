@@ -1,0 +1,11 @@
+[user]
+	name = MLabusquiere
+	email = labusquiere@gmail.com
+[color]
+	diff = auto
+	status = auto
+	branch = auto
+[push]
+	default = matching
+[core]
+	editor = vim
