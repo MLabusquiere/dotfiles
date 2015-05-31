@@ -1,9 +1,20 @@
-#!/bin/sh
+#!/bin/sh -e
 
-set -e
+#This script install dotfiles and mv old configuration at .dotfiles_old
 
-#TODO svg previous files 
-ln -s ~/.dotfiles/gitconfig ~/.gitconfig
-ln -s ~/.dotfiles/vim ~/.vim
-ln -s ~/.dotfiles/vimrc ~/.vimrc
-ln -s ~/.dotfiles/zshrc ~/.zshrc
+DIR=~/.dotfiles                    
+OLDDIR=~/.dotfiles_old             
+DOTFILES="gitconfig vimrc vim zshrc"    
+
+
+for file in $DOTFILES
+do
+	if [ -f ~/.$file ] && ! [ -h ~/.$file ] 
+	then
+		mkdir -p $OLDDIR
+		echo >&2 "-- Dotfile exist : mv ~/.$file at $OLDDIR/.$file"
+		mv ~/.$file $OLDDIR
+	fi
+	echo >&2 "-- Creating symlink to $file in home directory."
+	ln --force --symbolic $DIR/$file ~/.$file
+done
