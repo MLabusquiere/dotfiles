@@ -13,7 +13,7 @@ Plugin 'Lokaltog/vim-easymotion'
 Plugin 'trotter/autojump.vim'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
-" All of your Plugins must be added before the following line
+Plugin 'fatih/vim-go'
 call vundle#end()            " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
