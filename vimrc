@@ -4,6 +4,7 @@
 set nocompatible              
 
 filetype off                  " required by vundle
+
 set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
@@ -72,4 +73,17 @@ map <leader>ss :setlocal spell!<cr>
 
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=fr
 autocmd FileType gitcommit setlocal spell spelllang=en
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Syntastic
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
+
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
