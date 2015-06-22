@@ -23,6 +23,9 @@ alias ls="ls -G"
 alias destp="xinput set-prop 13 'Device Enabled' 0"
 alias acttp="xinput set-prop 13 'Device Enabled' 1"
 
+alias viminstall="vim +PluginInstall +qall"
+alias vimupdate="vim +PluginUpdate +qall"
+
 export EDITOR=vim
 
 # -------------------------------------------------------------------
