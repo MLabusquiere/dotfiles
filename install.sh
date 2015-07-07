@@ -9,12 +9,12 @@ DOTFILES="gitconfig vimrc vim zshrc"
 
 for file in $DOTFILES
 do
-	if [ -f ~/.$file ] && ! [ -h ~/.$file ] 
+	if [ -f "~/.$file" ] && ! [ -h "$HOME/.$file" ] 
 	then
 		mkdir -p $OLDDIR
 		echo >&2 "-- Dotfile exist : mv ~/.$file at $OLDDIR/.$file"
-		mv ~/.$file $OLDDIR
+		mv "$HOME/.$file" "$OLDDIR"
 	fi
 	echo >&2 "-- Creating symlink to $file in home directory."
-	ln --force --symbolic $DIR/$file ~/.$file
+	ln --force --symbolic "$DIR/$file" "$HOME/.$file"
 done
