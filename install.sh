@@ -4,7 +4,7 @@
 
 DIR=~/.dotfiles                    
 OLDDIR=~/.dotfiles_old             
-DOTFILES="gitconfig vimrc vim zshrc"    
+DOTFILES="gitconfig vimrc zshrc"    
 
 
 for file in $DOTFILES
@@ -18,3 +18,12 @@ do
 	echo >&2 "-- Creating symlink to $file in home directory."
 	ln --force --symbolic "$DIR/$file" "$HOME/.$file"
 done
+
+#vim install and setup
+if [ ! -f ~/.vim/bundle/Vundle.vim ]
+then
+	echo >&2 "setup vim for a first instalatiion"
+	git clone git@github.com:VundleVim/Vundle.vim.git \
+	    ~/.vim/bundle/Vundle.vim
+	vim +PluginInstall +qall
+fi
