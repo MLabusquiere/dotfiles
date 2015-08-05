@@ -16,7 +16,6 @@ source $ZSH/oh-my-zsh.sh
 plugins=(git mvn sublime autojump docker)
 
 alias disc='df -h'
-alias proxy=". /bin/proxy.sh"
 alias plz="sudo !!"
 alias ls="ls -G"
 
@@ -44,4 +43,6 @@ function myip() {
 
 #Added to have shellcheck in the path (used in vimrc by syntastic) 
 export PATH=$PATH:~/.cabal/bin/
-
+#Usual opt bin
+export PATH=$PATH:/opt/maven/bin
+export PATH=$PATH:/opt/idea/bin
