@@ -9,6 +9,8 @@ set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 Plugin 'gmarik/Vundle.vim'
+Plugin 'tpope/vim-pathogen'
+Plugin 'scrooloose/syntastic'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'trotter/autojump.vim'
 Plugin 'scrooloose/nerdtree.git'
