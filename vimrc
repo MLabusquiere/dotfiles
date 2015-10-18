@@ -78,6 +78,8 @@ autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
 
 autocmd FileType gitcommit setlocal spell spelllang=en
 
+autocmd FileType sh highlight OverLength ctermbg=red ctermfg=white guibg=#592929
+autocmd FileType sh match OverLength /\%81v.\+/
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
