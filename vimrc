@@ -74,6 +74,8 @@ set complete+=kspell
 map <leader>ss :setlocal spell!<cr>
 
 autocmd BufRead,BufNewFile *.md setlocal spell spelllang=fr
+autocmd BufNewFile,BufFilePre,BufRead *.md set filetype=markdown
+
 autocmd FileType gitcommit setlocal spell spelllang=en
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
