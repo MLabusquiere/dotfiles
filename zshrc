@@ -8,8 +8,15 @@ export UPDATE_ZSH_DAYS=13
 source $ZSH/oh-my-zsh.sh
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
+
 # Avoid error when zsh can not expand
 unsetopt nomatch
+
+#Load autojump
+if [[ -f /usr/share/autojump/autojump.sh ]]
+then
+	. /usr/share/autojump/autojump.sh
+fi
 
 # -------------------------------------------------------------------
 # Plugin
