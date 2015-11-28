@@ -54,3 +54,5 @@ export PATH=$PATH:~/.cabal/bin/
 export PATH=$PATH:/opt/maven/bin
 export PATH=$PATH:/opt/ghc/bin
 
+# Colors for vim calendar plugin
+export TERM=xterm-256color
