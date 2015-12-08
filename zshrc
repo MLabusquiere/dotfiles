@@ -35,7 +35,7 @@ source_cmd ~/.profile 'No configuration specific found at ~/.profile'
 ZSH=$HOME/.oh-my-zsh
 ZSH_THEME="sporty_256"
 export UPDATE_ZSH_DAYS=13
-source $ZSH/oh-my-zsh.sh
+source_cmd $ZSH/oh-my-zsh.sh "Oh-my-zsh is not installed"
 # Set to this to use case-sensitive completion
 # CASE_SENSITIVE="true"
 
@@ -43,10 +43,7 @@ source $ZSH/oh-my-zsh.sh
 unsetopt nomatch
 
 #Load autojump
-if [[ -f /usr/share/autojump/autojump.sh ]]
-then
-	. /usr/share/autojump/autojump.sh
-fi
+source_cmd /usr/share/autojump/autojump.sh 'Autojump is not installed' 
 
 # -------------------------------------------------------------------
 # Plugin
