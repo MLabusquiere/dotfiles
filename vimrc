@@ -16,6 +16,7 @@ Plugin 'trotter/autojump.vim'
 Plugin 'scrooloose/nerdtree.git'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'fatih/vim-go'
+Plugin 'itchyny/calendar.vim'
 call vundle#end()            " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -80,10 +81,16 @@ autocmd FileType gitcommit setlocal spell spelllang=en
 
 autocmd FileType sh highlight OverLength ctermbg=red ctermfg=white guibg=#592929
 autocmd FileType sh match OverLength /\%81v.\+/
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Calendar
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+let g:calendar_google_calendar = 1
+let g:calendar_google_task = 1
+
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Syntastic
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-
 set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
