@@ -67,11 +67,27 @@ alias vimupdate="vim +PluginUpdate +qall"
 alias idea='nohup /opt/idea/bin/idea.sh >/dev/null 2>&1 &' 
 alias eclipse='nohup /opt/eclipse/eclipse >/dev/null 2>&1 &'
 
+# -------------------------------------------------------------------
+# PROXY
+# -------------------------------------------------------------------
+
+if [[ -n "$PROXY" ]] 
+then
+	export http_proxy=http://$PROXY:3128/
+       	export https_proxy=https://$PROXY:3128/
+	export no_proxy="$no_proxy,localhost,127.0.0.1,.local"
+else
+	log_debug 'No proxy setup configured : fill $PROXY'
+fi
 
 # -------------------------------------------------------------------
 # FUNCTIONS
 # -------------------------------------------------------------------
+
  
+# -------------------------------------------------------------------
+# EXPORT
+# -------------------------------------------------------------------
 export EDITOR=vim
 
 #Added to have shellcheck in the path (used in vimrc by syntastic) 
