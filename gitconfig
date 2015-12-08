@@ -5,7 +5,36 @@
 	diff = auto
 	status = auto
 	branch = auto
-[push]
-	default = matching
+	ui = auto
 [core]
 	editor = vim
+	filemode = false
+	symlinks = true
+	fscache = true
+[alias]
+	git = ! git
+	st = status
+	ci = commit
+	co = checkout
+	glog = log --graph --oneline --decorate --branches --tags --date-order --full-history
+	lg = log --graph --decorate --date-order --full-history --pretty=format:'%C(yellow)%h%Creset <%C(red)%an%Creset> (%C(green)%ai%Creset)%C(auto)%d%Creset %s'
+	lga = log --graph --decorate --date-order --full-history --pretty=format:'%C(yellow)%h%Creset <%C(red)%an%Creset> (%C(green)%ai%Creset)%C(auto)%d%Creset %s' --all
+	incoming = ! git fetch --quiet && git log --graph --oneline --date-order --full-history ..@{upstream}
+	outgoing = ! git fetch --quiet && git log --graph --oneline --date-order --full-history @{push}..
+	incoming-all = ! git fetch --quiet && git for-each-ref --format='%(refname:short)' refs/heads | xargs -I {} git log --graph --oneline --decorate --date-order --full-history {}..{}@{upstream}
+	outgoing-all = ! git fetch --quiet && git for-each-ref --format='%(refname:short)' refs/heads | xargs -I {} git log --graph --oneline --decorate --date-order --full-history {}@{push}..{}
+	forget = update-index --assume-unchanged
+	unforget = update-index --no-assume-unchanged
+	forgotten = ! git ls-files -v | grep ^[a-z]
+	vimdiff = difftool --no-prompt --tool=vimdiff
+[pull]
+	rebase = preserve
+[rebase]
+	autostash = true
+	autosquash = true
+[merge]
+	tool = kdiff3
+[diff "astextplain"]
+	textconv = astextplain
+[push]
+	default = tracking
