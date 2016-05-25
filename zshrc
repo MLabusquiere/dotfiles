@@ -94,6 +94,7 @@ export EDITOR=vim
 export PATH=$PATH:~/.cabal/bin/
 
 #Usual opt bin
+export PATH=$PATH:/opt/bin
 export PATH=$PATH:/opt/maven/bin
 export PATH=$PATH:/opt/ghc/bin
 
