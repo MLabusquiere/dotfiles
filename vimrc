@@ -44,10 +44,10 @@ command W w !sudo tee % > /dev/null
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Open automatically NERDTree and change the focus on the 
 " previous file (ie : not in NERDTree)
-autocmd VimEnter * NERDTree | wincmd p
+" autocmd VimEnter * NERDTree | wincmd p
 
 " Close automatically 
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
+" autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pathogen
