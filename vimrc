@@ -17,6 +17,7 @@ Plugin 'scrooloose/nerdtree.git'
 Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'fatih/vim-go'
 Plugin 'itchyny/calendar.vim'
+Plugin 'tfnico/vim-gradle'
 call vundle#end()            " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
