@@ -16,11 +16,23 @@ source_cmd()
 	 if [[ -f "$file" ]]
 	 then
 		source "$file"
-	 else 
+	 else
 		log_debug "$@"
 	 fi
 }
 
+add_to_path()
+{
+	for new_path in "$@"
+	do
+		if [[ -d "$new_path" ]]
+		then
+			export PATH=$PATH:$new_path
+		else 
+			log_debug "$new_path does not exist and will not be added to PATH"
+		fi
+	done
+}
 
 # -------------------------------------------------------------------
 # Load env specific version
@@ -91,12 +103,10 @@ fi
 export EDITOR=vim
 
 #Added to have shellcheck in the path (used in vimrc by syntastic) 
-export PATH=$PATH:~/.cabal/bin/
+add_to_path ~/.cabal/bin/
 
 #Usual opt bin
-export PATH=$PATH:/opt/bin
-export PATH=$PATH:/opt/maven/bin
-export PATH=$PATH:/opt/ghc/bin
+add_to_path /opt/bin /opt/maven/bin /opt/ghc/bin
 
 # Colors for vim calendar plugin
 export TERM=xterm-256color
