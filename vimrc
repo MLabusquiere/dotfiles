@@ -32,6 +32,9 @@ set smarttab
 set number
 " Don't redraw while executing macros (good performance config)
 set lazyredraw 
+" Zsh like autocompletion
+set wildmode=longest,list,full
+set wildmenu
 
 filetype plugin indent on    
 
