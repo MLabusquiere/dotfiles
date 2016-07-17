@@ -18,6 +18,7 @@ Plugin 'Xuyuanp/nerdtree-git-plugin'
 Plugin 'fatih/vim-go'
 Plugin 'itchyny/calendar.vim'
 Plugin 'tfnico/vim-gradle'
+Plugin 'elzr/vim-json'
 call vundle#end()            " required
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
