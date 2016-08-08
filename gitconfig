@@ -27,6 +27,7 @@
 	unforget = update-index --no-assume-unchanged
 	forgotten = ! git ls-files -v | grep ^[a-z]
 	vimdiff = difftool --no-prompt --tool=vimdiff
+	spull = !git pull && git submodule sync --recursive && git submodule update --init --recursive
 [pull]
 	rebase = preserve
 [rebase]
@@ -38,3 +39,5 @@
 	textconv = astextplain
 [push]
 	default = tracking
+[status]
+	submoduleSummary = true
