@@ -15,6 +15,7 @@
 	git = ! git
 	st = status
 	ci = commit
+	ciane = commit --amend --no-edit
 	co = checkout
 	glog = log --graph --oneline --decorate --branches --tags --date-order --full-history
 	lg = log --graph --decorate --date-order --full-history --pretty=format:'%C(yellow)%h%Creset <%C(red)%an%Creset> (%C(green)%ai%Creset)%C(auto)%d%Creset %s'
@@ -28,6 +29,7 @@
 	forgotten = ! git ls-files -v | grep ^[a-z]
 	vimdiff = difftool --no-prompt --tool=vimdiff
 	spull = !git pull && git submodule sync --recursive && git submodule update --init --recursive
+	fetcha = fetch --all
 [pull]
 	rebase = preserve
 [rebase]
