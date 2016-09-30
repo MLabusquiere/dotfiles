@@ -110,3 +110,10 @@ add_to_path /opt/bin /opt/maven/bin /opt/ghc/bin
 
 # Colors for vim calendar plugin
 export TERM=xterm-256color
+
+vfind()	{
+	vim $(
+	find -L -name "*$1*" -type f "$@:1" |
+	head -1
+	)
+}
