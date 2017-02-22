@@ -11,6 +11,8 @@
 	filemode = false
 	symlinks = true
 	fscache = true
+	trustctime = false
+	autocrlf = true
 [alias]
 	git = ! git
 	st = status

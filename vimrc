@@ -105,3 +105,10 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 
+set mouse-=a
+set mouse-=a
+
+" Prevent windows backup files ending with ~ 
+" See real implication 
+set nowritebackup
+set nobackup
