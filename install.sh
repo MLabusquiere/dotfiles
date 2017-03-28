@@ -34,3 +34,10 @@ then
 
 fi
 
+if which apt-get >/dev/null 2>/dev/null && ! which npm >/dev/null 2>/dev/null
+then
+	sudo apt-get update && sudo apt-get install npm -y
+	#zshrc configure npm to not use sudo
+	zsh
+	npm install --global diff-so-fancy git-recall
+fi

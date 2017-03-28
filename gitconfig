@@ -13,6 +13,7 @@
 	fscache = true
 	trustctime = false
 	autocrlf = true
+	pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
 	git = ! git
 	st = status

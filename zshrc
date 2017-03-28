@@ -6,7 +6,7 @@ DEBUG=
 
 log_debug()
 {
-	test -z "$DEBUG" || 
+	test -z "$DEBUG" ||
 	echo >&2 "$@"	
 }
 
@@ -28,10 +28,24 @@ add_to_path()
 		if [[ -d "$new_path" ]]
 		then
 			export PATH=$PATH:$new_path
-		else 
+		else
 			log_debug "$new_path does not exist and will not be added to PATH"
 		fi
 	done
+}
+
+append_to_file()
+{
+	local file="$1" ; shift
+	if [[ ! -f $file ]]
+	then
+		log_debug "Creation of $file"
+		touch $file
+	fi	
+	if ! grep "$@" "$file" >/dev/null
+	then
+		echo "$@" >> $file
+	fi
 }
 
 # -------------------------------------------------------------------
@@ -55,7 +69,7 @@ source_cmd $ZSH/oh-my-zsh.sh "Oh-my-zsh is not installed"
 unsetopt nomatch
 
 #Load autojump
-source_cmd /usr/share/autojump/autojump.sh 'Autojump is not installed' 
+source_cmd /usr/share/autojump/autojump.sh 'Autojump is not installed'
 
 # -------------------------------------------------------------------
 # Plugin
@@ -76,14 +90,14 @@ alias acttp="xinput set-prop 13 'Device Enabled' 1"
 alias viminstall="vim +PluginInstall +qall"
 alias vimupdate="vim +PluginUpdate +qall"
 
-alias idea='nohup /opt/idea/bin/idea.sh >/dev/null 2>&1 &' 
+alias idea='nohup /opt/idea/bin/idea.sh >/dev/null 2>&1 &'
 alias eclipse='nohup /opt/eclipse/eclipse >/dev/null 2>&1 &'
 
 # -------------------------------------------------------------------
 # PROXY
 # -------------------------------------------------------------------
 
-if [[ -n "$PROXY" ]] 
+if [[ -n "$PROXY" ]]
 then
 	export http_proxy=http://$PROXY/
 	export https_proxy=https://$PROXY/
@@ -96,13 +110,26 @@ fi
 # FUNCTIONS
 # -------------------------------------------------------------------
 
- 
+# -------------------------------------------------------------------
+# NPM
+# -------------------------------------------------------------------
+
+if which npm >/dev/null 2>/dev/null
+then
+	NPM_PACKAGES="$HOME/.npm-packages"
+	mkdir -p $NPM_PACKAGES 2>/dev/null
+	add_to_path "$NPM_PACKAGES/bin"
+	append_to_file "${HOME}/.npmrc" "prefix=${HOME}/.npm-packages"
+else
+	log_debug "Npm installation not found"
+fi
+
 # -------------------------------------------------------------------
 # EXPORT
 # -------------------------------------------------------------------
 export EDITOR=vim
 
-#Added to have shellcheck in the path (used in vimrc by syntastic) 
+#Added to have shellcheck in the path (used in vimrc by syntastic)
 add_to_path ~/.cabal/bin/
 
 #Usual opt bin
