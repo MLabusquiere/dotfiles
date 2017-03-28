@@ -2,14 +2,14 @@
 
 #This script install dotfiles and mv old configuration at .dotfiles_old
 
-DIR=~/.dotfiles                    
-OLDDIR=~/.dotfiles_old             
-DOTFILES="gitconfig vimrc zshrc"    
+DIR=~/.dotfiles
+OLDDIR=~/.dotfiles_old
+DOTFILES="gitconfig vimrc zshrc"
 
 
 for file in $DOTFILES
 do
-	if [ -f "~/.$file" ] && ! [ -h "$HOME/.$file" ] 
+	if [ -f "~/.$file" ] && ! [ -h "$HOME/.$file" ]
 	then
 		mkdir -p $OLDDIR
 		echo >&2 "-- Dotfile exist : mv ~/.$file at $OLDDIR/.$file"
@@ -20,7 +20,7 @@ do
 done
 
 #vim install and setup
-if [ ! -f ~/.vim/bundle/Vundle.vim ]
+if [ ! -d ~/.vim/bundle/Vundle.vim ]
 then
 	echo >&2 "setup vim for a first instalatiion"
 	git clone https://github.com/VundleVim/Vundle.vim.git \
