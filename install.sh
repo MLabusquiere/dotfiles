@@ -27,3 +27,10 @@ then
 	    ~/.vim/bundle/Vundle.vim
 	vim +PluginInstall +qall
 fi
+
+if which >/dev/null 2>/dev/null git
+then
+	ln --force --symbolic $DIR/git-templates $HOME/.git-templates
+
+fi
+
