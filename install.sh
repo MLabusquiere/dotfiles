@@ -4,7 +4,7 @@
 
 DIR=~/.dotfiles
 OLDDIR=~/.dotfiles_old
-DOTFILES="gitconfig vimrc zshrc"
+DOTFILES="gitconfig vimrc zshrc config/i3/config"
 
 
 for file in $DOTFILES
