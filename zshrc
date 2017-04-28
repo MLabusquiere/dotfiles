@@ -92,6 +92,7 @@ alias vimupdate="vim +PluginUpdate +qall"
 
 alias idea='nohup /opt/idea/bin/idea.sh >/dev/null 2>&1 &'
 alias eclipse='nohup /opt/eclipse/eclipse >/dev/null 2>&1 &'
+alias freemind='nohup bash /opt/freemind/freemind.sh >/dev/null 2>&1 &'
 
 # -------------------------------------------------------------------
 # PROXY
