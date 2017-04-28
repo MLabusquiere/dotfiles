@@ -117,12 +117,13 @@ fi
 
 if which npm >/dev/null 2>/dev/null
 then
+	log_debug "Npm installation not found"
 	NPM_PACKAGES="$HOME/.npm-packages"
 	mkdir -p $NPM_PACKAGES 2>/dev/null
 	add_to_path "$NPM_PACKAGES/bin"
 	append_to_file "${HOME}/.npmrc" "prefix=${HOME}/.npm-packages"
 else
-	log_debug "Npm installation not found"
+	log_debug "Npm installation found"
 fi
 
 # -------------------------------------------------------------------
