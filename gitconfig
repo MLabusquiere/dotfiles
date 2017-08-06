@@ -47,4 +47,4 @@
 [status]
 	submoduleSummary = true
 [init]
-	templatedir = ~/.git_template
+	templatedir = ~/.git-templates

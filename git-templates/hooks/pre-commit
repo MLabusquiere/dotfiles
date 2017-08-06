@@ -1,12 +1,31 @@
 #!/bin/bash
 
-if which mvn >/dev/null 2>/dev/null && find -maxdepth 1 -type f -name pom.xml 
+set -e
+
+JAVA_FORMAT_SCRIPT='/opt/idea/bin/format.sh'
+
+fail() 
+{
+	echo -e "\e[00;31m[GIT-HOOKS] $@ \e[00m"
+	exit 1
+}
+
+
+if test -f $JAVA_FORMAT_SCRIPT && 
+	find >/dev/null 2>/dev/null -name *.iml
 then
-	mvn clean install
-	if [ $? -ne 0 ]; then
-		echo -e "\e[00;31m[GIT-HOOKS] Error while testing!\e[00m"
-		exit 1
-	else
-		exit 0
-	fi  
+	files="$(git diff --cached --name-only)"
+	if [[ -n $files ]]
+	then	      
+		$JAVA_FORMAT_SCRIPT ||
+		fail "Error while formating!"
+	fi
 fi
+
+if which mvn >/dev/null 2>/dev/null && 
+	find >/dev/null 2>/dev/null -maxdepth 1 -type f -name pom.xml 
+then
+	mvn clean verify || 
+	fail "Error while testing!"
+fi
+
