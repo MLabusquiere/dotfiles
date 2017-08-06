@@ -2,6 +2,7 @@
 " Vundle
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible              
+set history=100000
 
 filetype off                  " required by vundle
 
