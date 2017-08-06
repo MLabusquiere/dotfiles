@@ -12,7 +12,7 @@
 	symlinks = true
 	fscache = true
 	trustctime = false
-	autocrlf = true
+	autocrlf = false
 	pager = diff-so-fancy | less --tabs=4 -RFX
 [alias]
 	git = ! git
