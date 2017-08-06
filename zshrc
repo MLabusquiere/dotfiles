@@ -114,7 +114,7 @@ install_package_if_does_not_exist vim
 # Plugin
 # -------------------------------------------------------------------
 
-plugins=(git mvn sublime autojump docker)
+plugins=(vagrant git mvn sublime autojump docker)
 
 # -------------------------------------------------------------------
 # Aliases
