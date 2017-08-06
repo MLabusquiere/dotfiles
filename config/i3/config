@@ -93,9 +93,10 @@ bindsym $mod+space focus mode_toggle
 #bindsym $mod+d focus child
 
 # switch to workspace
-bindsym $mod+ampersand workspace 1:Internet
-bindsym $mod+eacute workspace 2:Console
-bindsym $mod+quotedbl workspace 3:IntelliJ
+
+bindsym $mod+ampersand workspace 1:Internet; exec [ $(ps h -C firefox | wc -l) = 0 ] && /usr/bin/firefox &
+bindsym $mod+eacute workspace 2:Console; exec [ $(ps h -C zsh -C bash | wc -l) = 0 ] && /usr/bin/terminator &
+bindsym $mod+quotedbl workspace 3:IntelliJ; exec  [ $(ps h -C idea.sh | wc -l) = 0 ] && idea
 bindsym $mod+apostrophe workspace 4:4
 bindsym $mod+parenleft workspace 5
 bindsym $mod+minus workspace 6
@@ -190,3 +191,4 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 #Lock
 bindsym $mod+l exec /bin/bash ~/.config/i3/lock_multimonitor.sh
 
+exec --no-startup-id i3-msg 'workspace 1:Internet; exec /usr/bin/firefox'
