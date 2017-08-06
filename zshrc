@@ -193,14 +193,22 @@ export EDITOR=vim
 add_to_path ~/.cabal/bin/
 
 #Usual opt bin
-add_to_path /opt/bin /opt/maven/bin /opt/ghc/bin
+add_to_path /opt/bin /opt/maven/bin /opt/ghc/bin /opt/gatling/bin /opt/sbt/bin ~/.npm-global /opt/android-studio/bin/ ~/.npm-global/bin/ /opt/confluent/bin
 
 # Colors for vim calendar plugin
 export TERM=xterm-256color
 
-vfind()	{
+vimf()	{
 	vim $(
 	find -L -name "*$1*" -type f |
 	head -1
 	)
 }
+
+vimj() {
+	vim "+J $@"
+}
+
+export ANDROID_HOME=~/Android/Sdk
+export PATH=${PATH}:${ANDROID_HOME}/tools
+export PATH=${PATH}:${ANDROID_HOME}/platform-tools
