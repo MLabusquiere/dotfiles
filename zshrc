@@ -181,6 +181,8 @@ install_package_if_does_not_exist udiskie
 install_package_if_does_not_exist scrot imagemagick i3lock
 # Image reader
 install_package_if_does_not_exist sxiv
+# Pdf reader
+install_package_if_does_not_exist zathura
 
 # -------------------------------------------------------------------
 # EXPORT
