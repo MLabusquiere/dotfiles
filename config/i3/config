@@ -205,4 +205,3 @@ bindsym XF86MonBrightnessDown exec xbacklight -dec 20 # decrease screen brightne
 #Lock
 bindsym $mod+l exec /bin/bash ~/.config/i3/lock_multimonitor.sh
 
-exec --no-startup-id i3-msg 'workspace 1:Internet; exec /usr/bin/firefox'
