@@ -183,6 +183,8 @@ install_package_if_does_not_exist scrot imagemagick i3lock
 install_package_if_does_not_exist sxiv
 # Pdf reader
 install_package_if_does_not_exist zathura
+#Fullscreen nav in i3
+install_package_if_does_not_exist xdotool
 
 # -------------------------------------------------------------------
 # EXPORT

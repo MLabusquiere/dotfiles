@@ -49,10 +49,11 @@ bindsym $mod+d exec dmenu_run
 # bindsym $mod+m focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $mod+Left exec --no-startup-id ~/.config/i3/fullscreen_nav.sh focus left
+bindsym $mod+Down exec --no-startup-id ~/.config/i3/fullscreen_nav.sh focus down
+bindsym $mod+Up exec --no-startup-id ~/.config/i3/fullscreen_nav.sh focus up
+bindsym $mod+Right exec --no-startup-id ~/.config/i3/fullscreen_nav.sh focus right
+
 
 # move focused window
 bindsym $mod+Shift+j move left
