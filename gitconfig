@@ -13,7 +13,7 @@
 	fscache = true
 	trustctime = false
 	autocrlf = false
-	pager = diff-so-fancy | less --tabs=4 -RFX
+	whitespace = fix
 [alias]
 	git = ! git
 	st = status
@@ -32,7 +32,9 @@
 	forgotten = ! git ls-files -v | grep ^[a-z]
 	vimdiff = difftool --no-prompt --tool=vimdiff
 	spull = !git pull && git submodule sync --recursive && git submodule update --init --recursive
-	fetcha = fetch --all
+	fetcha = fetch --all --prune --tags
+	stash = stash -u
+	foreach = "!f() { for folder in $(find -name .git) ; do git -C $(dirname $folder) "$@" ; done } ; f"
 [pull]
 	rebase = preserve
 [rebase]
