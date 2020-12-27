@@ -37,7 +37,7 @@
 	stash = stash -u
 	foreach = "!f() { for folder in $(find -name .git) ; do git -C $(dirname $folder) "$@" ; done } ; f"
 [pull]
-	rebase = preserve
+	rebase = true
 [rebase]
 	autostash = true
 	autosquash = true
