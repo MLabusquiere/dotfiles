@@ -14,6 +14,7 @@
 	trustctime = false
 	autocrlf = false
 	whitespace = fix
+	excludesfile = ~/.gitignore
 [alias]
 	git = ! git
 	st = status
