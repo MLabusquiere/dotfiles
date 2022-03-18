@@ -36,6 +36,13 @@ then
 
 fi
 
+# Install the zsh plugin manager
+if [ ! -d ~/.zplugin ]
+then
+	mkdir ~/.zplugin
+	git clone https://github.com/zdharma/zplugin.git ~/.zplugin/bin
+fi
+
 if which apt-get >/dev/null 2>/dev/null && ! which npm >/dev/null 2>/dev/null
 then
 	sudo apt-get update && sudo apt-get install npm -y
