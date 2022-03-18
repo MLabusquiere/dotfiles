@@ -1,6 +1,8 @@
 #!/usr/bin/env bash
 
 COMMAND="$@"
+
+
 FULLSCREEN=$(xprop -id $(xdotool getactivewindow) _NET_WM_STATE | grep _NET_WM_STATE_FULLSCREEN)
 
 which xdotool &&

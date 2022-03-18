@@ -9,7 +9,8 @@
 #BLURTYPE="0x5"
 #BLURTYPE="0x2"
 #BLURTYPE="5x3"
-BLURTYPE="2x8"
+#BLURTYPE="2x8"
+BLURTYPE="0x6"
 #BLURTYPE="2x3"
 
 DISPLAY_RE="([0-9]+)x([0-9]+)\\+([0-9]+)\\+([0-9]+)"
@@ -55,9 +56,10 @@ do
 done <<<"`xrandr`"
 
 #Execute ImageMagick:
+#PARAMS="'$OUTPUT_IMAGE' '-level' '0%,100%,0.6' '-scale' '5%' '-blur' '$BLURTYPE' '-resize' '500%' $PARAMS '$OUTPUT_IMAGE'"
 PARAMS="'$OUTPUT_IMAGE' '-level' '0%,100%,0.6' '-blur' '$BLURTYPE' $PARAMS '$OUTPUT_IMAGE'"
 eval convert $PARAMS
-
+ 
 #Lock the screen:
 i3lock -i $OUTPUT_IMAGE -t
 
